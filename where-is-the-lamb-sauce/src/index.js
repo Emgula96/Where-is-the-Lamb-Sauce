@@ -2,16 +2,41 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { applyMiddleware, createStore } from 'redux'
+import logger from 'redux-logger'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
+import persistStore from "redux-persist/es/persistStore"
+import Search from './components/Search';
+import Recipes from './components/Recipes';
+import RecipeCard from './components/RecipeCard';
+import GroceryList from './components/GroceryList';
+import persistedReducer from './reducers/rootReducer';
+import Home from './components/Home';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+const store = createStore(persistedReducer, applyMiddleware(logger));
+const persistor = persistStore(store);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    
+    <BrowserRouter>
+      <PersistGate persistor={persistor}>
+        <Home/>
+          <Routes>
+            <Route exact path="/" element={<App/>}></Route>
+            <Route exact path="/Search" element={<Search/>}></Route>
+            <Route exact path="/Recipes" element={<Recipes/>}></Route>
+            <Route exact path="/RecipeCard" element={<RecipeCard/>}></Route>
+            <Route exact path="/GroceryList" element={<GroceryList/>}></Route>
+          </Routes>
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>,
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

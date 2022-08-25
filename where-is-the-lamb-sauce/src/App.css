@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.bgImage {
+  background-image: url("./doughmound.jpg");
+  background-color: #cccccc;
+  min-height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="bgImage">
+        <div className="hello-text">
+          <h1 style={{ fontSize: "50px" }}>Where's the LAMB SAUCE!?</h1>
+          <h5>Your one stop for meal prep.</h5>
+          <Link to="/Search">
+            <Button>Get Started</Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
