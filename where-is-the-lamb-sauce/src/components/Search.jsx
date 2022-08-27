@@ -1,14 +1,16 @@
-import React from 'react'
-import InputField from './InputField'
+import React from "react";
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
+import "../css/search.css";
 
 const Search = () => {
   return (
-      <div>
-          <h1>This is the search page</h1>
-          <InputField />
-          
+    <div className="backgroundimg">
+      <h1>Search for a new Recipe</h1>
+      <SearchForm />
+      <SearchResults />
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

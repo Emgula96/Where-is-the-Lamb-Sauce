@@ -15,6 +15,7 @@ import GroceryList from './components/GroceryList';
 import persistedReducer from './reducers/rootReducer';
 import Home from './components/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
+import PageNotFound from './components/PageNotFound';
 
 
 
@@ -25,7 +26,6 @@ const persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    
     <BrowserRouter>
       <PersistGate persistor={persistor}>
         <Home/>
@@ -34,7 +34,8 @@ root.render(
             <Route exact path="/Search" element={<Search/>}></Route>
             <Route exact path="/Recipes" element={<Recipes/>}></Route>
             <Route exact path="/RecipeCard" element={<RecipeCard/>}></Route>
-            <Route exact path="/GroceryList" element={<GroceryList/>}></Route>
+          <Route exact path="/GroceryList" element={<GroceryList />}></Route>
+          <Route path='*' element={<PageNotFound/>}></Route>
           </Routes>
       </PersistGate>
     </BrowserRouter>

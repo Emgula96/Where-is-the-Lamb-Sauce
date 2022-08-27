@@ -1,0 +1,13 @@
+.backgroundimg {
+    margin: 0px;
+    background-image: url("../doughmound.jpg");
+    background-color: #cccccc;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.8)
+    
+    
+}
