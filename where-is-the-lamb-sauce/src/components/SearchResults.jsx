@@ -7,7 +7,6 @@ const SearchResults = () => {
 
   return (
     <div>
-      SearchResult
       {results.map((result) => (
         <RecipeCard key={result.id} recipe={result} />
       ))}

@@ -3,10 +3,9 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
-import SearchResults from "./SearchResults";
+import { useState,} from "react";
 
-const APIkey = "9b73240ca67d420c8370f0b057d81bc6";
+const APIkey = process.env.REACT_APP_API_KEY;
 
 function SearchForm() {
   const [cuisine, setCuisine] = useState("");
@@ -35,30 +34,30 @@ function SearchForm() {
             <option value="">Any</option>
             <option value="african">African</option>
             <option value="american">American</option>
-            <option>British</option>
-            <option>Cajun</option>
-            <option>Carribean</option>
-            <option>Chinese</option>
-            <option>Eastern European</option>
-            <option>European</option>
-            <option>French</option>
-            <option>German</option>
-            <option>Greek</option>
-            <option>Indian</option>
-            <option>Irish</option>
-            <option>Italian</option>
-            <option>Japanese</option>
-            <option>Jewish</option>
-            <option>Korean</option>
-            <option>Latin American</option>
-            <option>Mediterranean</option>
-            <option>Mexican</option>
-            <option>Middle Eastern</option>
-            <option>Nordic</option>
-            <option>Southern</option>
-            <option>Spanish</option>
-            <option>Thai</option>
-            <option>Vietnamese</option>
+            <option value="british">British</option>
+            <option value="cajun">Cajun</option>
+            <option value="carribean">Carribean</option>
+            <option value="chinese">Chinese</option>
+            <option value="eastern european">Eastern European</option>
+            <option value="european">European</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="greek">Greek</option>
+            <option value="indian">Indian</option>
+            <option value="irish">Irish</option>
+            <option value="italian">Italian</option>
+            <option value="japanese">Japanese</option>
+            <option value="jewish">Jewish</option>
+            <option value="korean">Korean</option>
+            <option value="latin american">Latin American</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="mexican">Mexican</option>
+            <option value="middle eastern">Middle Eastern</option>
+            <option value="nordic">Nordic</option>
+            <option value="southern">Southern</option>
+            <option value="spanish">Spanish</option>
+            <option value="thai">Thai</option>
+            <option value="vietnamese">Vietnamese</option>
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="type">
@@ -66,19 +65,19 @@ function SearchForm() {
           <Form.Select value={type} onChange={(e) => setType(e.target.value)}>
             <option value="">Any</option>
             <option value="main course">Main Course</option>
-            <option>Side Dish</option>
-            <option>Dessert</option>
-            <option>Appetizer</option>
-            <option>Salad</option>
-            <option>Bread</option>
-            <option>Breakfast</option>
-            <option>Soup</option>
-            <option>Beverage</option>
-            <option>Sauce</option>
-            <option>Marinade</option>
-            <option>Fingerfood</option>
-            <option>Snack</option>
-            <option>Drink</option>
+            <option value="side dish">Side Dish</option>
+            <option value="dessert">Dessert</option>
+            <option value="appetizer">Appetizer</option>
+            <option value="salad">Salad</option>
+            <option value="bread">Bread</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="soup">Soup</option>
+            <option value="beverage">Beverage</option>
+            <option value="sauce">Sauce</option>
+            <option value="marinade">Marinade</option>
+            <option value="fingerfood">Fingerfood</option>
+            <option value="snack">Snack</option>
+            <option value="drink">Drink</option>
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="keywords">
@@ -87,7 +86,7 @@ function SearchForm() {
         </Form.Group>
       </Row>
       <Button variant="primary" type="submit">
-        Submit
+        Get Recipes!
       </Button>
     </Form>
   );

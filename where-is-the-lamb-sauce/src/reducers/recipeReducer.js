@@ -1,5 +1,5 @@
 const initialState = {
-    individualRecipe: {},
+  individualRecipe: {},
 };
 
 const recipeReducer = (state = initialState, action) => {
