@@ -7,7 +7,7 @@ const SearchResults = () => {
 
   return (
     <div>
-      {results.map((result) => (
+      {results?.map((result) => (
         <RecipeCard key={result.id} recipe={result} />
       ))}
     </div>

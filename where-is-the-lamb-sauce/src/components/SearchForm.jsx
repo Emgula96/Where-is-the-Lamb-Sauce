@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useDispatch } from "react-redux";
 import { useState,} from "react";
+import { clearSearch, setSearch } from "../actions/searchActions";
 
 const APIkey = process.env.REACT_APP_API_KEY;
 
@@ -17,7 +18,7 @@ function SearchForm() {
     e.preventDefault();
     const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIkey}&cuisine=${cuisine}&type=${type}&number=50&query=${keyword}`);
     const data = await res.json();
-    dispatch({ type: "SET_SEARCH_RESULTS", payload: data.results });
+    setSearch(dispatch, data);
   }
 
   return (
@@ -26,7 +27,6 @@ function SearchForm() {
         <Form.Group as={Col} controlId="cuisine">
           <Form.Label>Choose Cuisine</Form.Label>
           <Form.Select
-            size="sm"
             value={cuisine}
             onChange={(e) => {
               setCuisine(e.target.value);
@@ -85,9 +85,10 @@ function SearchForm() {
           <Form.Control value={keyword} onChange={(e) => setKeyword(e.target.value)} />
         </Form.Group>
       </Row>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="submit-btn">
         Get Recipes!
       </Button>
+      <Button className="clear-btn" onClick={() => clearSearch(dispatch)}>Clear Results</Button>
     </Form>
   );
 }

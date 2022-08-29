@@ -9,13 +9,13 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 import persistStore from "redux-persist/es/persistStore"
 import Search from './components/Search';
-import Recipes from './components/Recipes';
 import RecipeCard from './components/RecipeCard';
 import GroceryList from './components/GroceryList';
 import persistedReducer from './reducers/rootReducer';
 import Home from './components/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from './components/PageNotFound';
+import IndividualRecipe from './components/IndividualRecipe';
 
 
 
@@ -31,10 +31,10 @@ root.render(
         <Home/>
           <Routes>
             <Route exact path="/" element={<App/>}></Route>
-            <Route exact path="/Search" element={<Search/>}></Route>
-            <Route exact path="/Recipes" element={<Recipes/>}></Route>
-            <Route exact path="/RecipeCard" element={<RecipeCard/>}></Route>
-          <Route exact path="/GroceryList" element={<GroceryList />}></Route>
+            <Route exact path="/search" element={<Search/>}></Route>
+            <Route exact path="/individual-recipe" element={<IndividualRecipe/>}></Route>
+            <Route exact path="/recipeCard" element={<RecipeCard/>}></Route>
+          <Route exact path="/groceryList" element={<GroceryList />}></Route>
           <Route path='*' element={<PageNotFound/>}></Route>
           </Routes>
       </PersistGate>
