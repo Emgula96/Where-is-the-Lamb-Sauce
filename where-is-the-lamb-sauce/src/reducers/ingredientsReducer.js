@@ -1,14 +1,13 @@
 const initialState = {
-    ingredientsList:[]
+  ingredientsList: [],
 };
-
 
 const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_INGREDIENTS_LIST":
       return {
         ...state,
-        ingredientsList: action.ingredients,
+        ingredientsList: action.payload,
       };
     case "DELETE_FROM_INGREDIENTS_LIST":
       return {
@@ -21,4 +20,4 @@ const ingredientsReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default ingredientsReducer
+export default ingredientsReducer;

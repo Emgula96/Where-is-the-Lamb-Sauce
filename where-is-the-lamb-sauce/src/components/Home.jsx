@@ -6,10 +6,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCow } from '@fortawesome/free-solid-svg-icons'
 import '../css/home.css'
 
+
 const Home = () => {
   return (
     <Navbar bg="dark" variant="dark">
-          <Link id="nav-item" to='/'><Navbar.Brand id ='nav-item'><FontAwesomeIcon icon={faCow} /></Navbar.Brand></Link>
+          <Link id="nav-item" to='/'><Navbar.Brand id ='nav-item'><img id='navPicture' src={ require('../img/white-lamb.png') } /></Navbar.Brand></Link>
       <Nav className="mr-auto pl-2" id="navbar">
         <Link id ='nav-item' className="nav-link" to="/"> Home </Link>
         <Link id ='nav-item'className="nav-link" to="/search"> Search Recipes </Link>

@@ -39,9 +39,9 @@
 
 
 .bgImage {
-  background-image: url("./doughmound.jpg");
+  background-image: url("../src/img/doughmound.jpg");
   background-color: #cccccc;
-  min-height: 100vh;
+  min-height: 93vh;
   width: 100vw;
   background-attachment: fixed;
   background-position: center;
