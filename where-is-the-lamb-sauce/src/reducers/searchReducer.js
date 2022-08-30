@@ -11,7 +11,7 @@ const searchReducer = (state = initialState, action) => {
       };
     case "CLEAR_SEARCH_RESULTS":
       return {
-        initialState
+        searchResults:[]
       };
     default:
       return state;

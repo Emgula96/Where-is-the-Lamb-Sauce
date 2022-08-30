@@ -5,24 +5,22 @@ import { deleteRecipe } from '../actions/ShoppingActions'
 
 const MyRecipes = (props) => {
     const dispatch = useDispatch()
-    const deleteRecipe = () => {
-        deleteRecipe((dispatch, props.recipe))
+    const deleteMyRecipe = () => {
+        deleteRecipe(dispatch, props)
         //add deletefrom ingredients
     }
     return (
-      <div>
+        <div>
         <Card style={{ width: "10rem" }} className="m-2">
-          <Card.Img variant="top" src={props.recipe.image} />
-          <Card.Body className="d-flex flex-column justify-content-between">
+            <Card.Img variant="top" src={props.recipe.image} />
+            <Card.Body className="d-flex flex-column justify-content-between">
             <Card.Title>{props.recipe.title}</Card.Title>
-            {/* <Card.Subtitle>{props.recipe.price}</Card.Subtitle>
-            <Card.Text>{props.recipe.description}</Card.Text> */}
-            <Button variant="primary" className="m-1" onClick={deleteRecipe}>
-              Delete from List
+            <Button variant="primary" className="m-1" onClick={deleteMyRecipe}>
+                Delete from List
             </Button>
-          </Card.Body>
+            </Card.Body>
         </Card>
-      </div>
+        </div>
     );
 }
 

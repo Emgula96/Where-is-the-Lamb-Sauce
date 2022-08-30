@@ -12,7 +12,7 @@ const shoppingReducer = (state = initialState, action) => {
       case "DELETE_RECIPE":
         return {
           ...state,
-          shoppingList: state.shoppingList.filtert((i) => {
+          shoppingList: state.shoppingList.filter((i) => {
             return i.id !== action.payload.id;
           }),
         };

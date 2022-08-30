@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Groceries from './Groceries';
 import MyRecipes from './MyRecipes';
 
 const MyList = () => {
@@ -12,12 +13,13 @@ const MyList = () => {
 
   return (
     <div>
-      {Array.isArray(myRecipes)
+      {myRecipes.length > 0
         ? myRecipes?.map((recipe, index) => {
           return <MyRecipes key={index} recipe={recipe} />;
-          })
-        : "No current recipes, Add some from the search Recipes tab!"}
-    </div>
+        })
+        : "No current recipes. Add some from the Search Recipes tab!"}
+        <Groceries/>
+      </div>
   );
 }
 

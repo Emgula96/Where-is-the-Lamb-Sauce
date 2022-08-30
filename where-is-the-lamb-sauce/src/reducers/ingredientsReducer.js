@@ -16,6 +16,10 @@ const ingredientsReducer = (state = initialState, action) => {
           return n.id !== action.recipe.id;
         }),
       };
+    case "CLEAR_GROCERIES":
+      return {
+        ingredientsList:[]
+      }
     default:
       return state;
   }

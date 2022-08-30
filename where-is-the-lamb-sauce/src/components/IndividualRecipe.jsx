@@ -25,9 +25,9 @@ const IndividualRecipe = () => {
   };
 
   const handleClick = () => {
-    setingredientList( thisRecipe);
+    setingredientList(thisRecipe);
       addToShopping(dispatch, thisRecipe);
-   }
+  }
 
 
   return (
@@ -57,7 +57,7 @@ const IndividualRecipe = () => {
         onClick={() => {
           handleClick()
         }}>
-        Add ingredients to Grocery List
+        Add to My Recipes
       </Button>
     </div>
   );
