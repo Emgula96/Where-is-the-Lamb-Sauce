@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addIngredientstoList } from "../actions/IngredientActions";
 import removeTags from "../actions/removeHTML";
 import { Button } from "react-bootstrap";
+import { addToShopping } from "../actions/ShoppingActions";
 
 const IndividualRecipe = () => {
   const thisRecipe = useSelector((state) => state.recipeR.individualRecipe);
   let ingredientList = useSelector((state) => state.ingredientsR.ingredientsList);
   const dispatch = useDispatch();
   const instructions = thisRecipe.analyzedInstructions[0]?.steps;
-  
+
   const setingredientList = (thisRecipe) => {
     for (let i of thisRecipe.extendedIngredients) {
       ingredientList.push({
@@ -22,8 +23,13 @@ const IndividualRecipe = () => {
       addIngredientstoList(dispatch, ingredientList);
     }
   };
-  
-  
+
+  const handleClick = () => {
+    setingredientList( thisRecipe);
+      addToShopping(dispatch, thisRecipe);
+   }
+
+
   return (
     <div>
       <h1>{thisRecipe.title} </h1>
@@ -49,7 +55,7 @@ const IndividualRecipe = () => {
       </ol>
       <Button
         onClick={() => {
-          setingredientList(thisRecipe);
+          handleClick()
         }}>
         Add ingredients to Grocery List
       </Button>

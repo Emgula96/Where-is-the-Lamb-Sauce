@@ -14,7 +14,7 @@ const Home = () => {
       <Nav className="mr-auto pl-2" id="navbar">
         <Link id ='nav-item' className="nav-link" to="/"> Home </Link>
         <Link id ='nav-item'className="nav-link" to="/search"> Search Recipes </Link>
-        <Link id ='nav-item'className="nav-link" to="/groceryList"> Grocery List </Link>
+        <Link id ='nav-item'className="nav-link" to="/my-list"> My Recipes </Link>
       </Nav>
       </Navbar>
   );
