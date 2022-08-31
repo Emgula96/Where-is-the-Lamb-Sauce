@@ -6,10 +6,10 @@ const SearchResults = () => {
   const results = useSelector((state) => state.searchR.searchResults);
 
   return (
-    <div>
-      {results?.map((result) => (
-        <RecipeCard key={result.id} recipe={result} />
-      ))}
+    <div className="card-container">
+        {results?.map((result) => (
+          <RecipeCard key={result.id} recipe={result} />
+        ))}
     </div>
   );
 };

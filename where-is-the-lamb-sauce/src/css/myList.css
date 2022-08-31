@@ -1,0 +1,14 @@
+.myCard-container{
+    display: flex;
+}
+
+.myCard-container {
+overflow: scroll;
+-ms-overflow-style: none;
+scrollbar-width: none;
+width: 30rem;
+}
+
+.myCard-container::-webkit-scrollbar {
+  display: none;
+}

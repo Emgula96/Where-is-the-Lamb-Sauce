@@ -11,7 +11,7 @@ const MyRecipes = (props) => {
     }
     return (
         <div>
-        <Card style={{ width: "10rem" }} className="m-2">
+            <Card style={{height:"25rem"}} className="m-2" id="m-2">
             <Card.Img variant="top" src={props.recipe.image} />
             <Card.Body className="d-flex flex-column justify-content-between">
             <Card.Title>{props.recipe.title}</Card.Title>

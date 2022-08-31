@@ -52,18 +52,18 @@ const RecipeCard = ({ recipe }) => {
 
 
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
+    <div className="card">
+      <Card style={{ width: "100%", height: "100%" }}>
         <Card.Img variant="top" src={recipe?.image} alt="Picture not found" />
         <Card.Body>
           <Card.Title>{recipe?.title}</Card.Title>
-          <Button className="m-4" variant="primary" onClick={addAllToShopping}>
+          <Button id="btn" className="m-4" variant="primary" onClick={addAllToShopping}>
             Add to My Recipes
           </Button>
-        </Card.Body>
-        <Button variant="secondary" className="m-4" onClick={pullRecipe}>
+        <Button id="btn" variant="secondary" className="m-4" onClick={pullRecipe}>
           More Info
-        </Button>
+            </Button>
+        </Card.Body>
       </Card>
     </div>
   );

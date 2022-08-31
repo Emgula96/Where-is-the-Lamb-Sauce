@@ -6,7 +6,8 @@ import "../css/search.css";
 const Search = () => {
   return (
     <div className="backgroundimg">
-      <h1>Search for a new Recipe</h1>
+      <h1>SEARCH FOR NEW RECIPE'S HERE!</h1>
+      <br></br>
       <SearchForm />
       <SearchResults />
     </div>

@@ -25,7 +25,7 @@ function SearchForm() {
     <Form onSubmit={handleSubmit}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="cuisine">
-          <Form.Label>Choose Cuisine</Form.Label>
+          <Form.Label>Choose a Cuisine</Form.Label>
           <Form.Select
             value={cuisine}
             onChange={(e) => {
@@ -61,7 +61,7 @@ function SearchForm() {
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="type">
-          <Form.Label>Type/Course</Form.Label>
+          <Form.Label>Choose a Type/Course</Form.Label>
           <Form.Select value={type} onChange={(e) => setType(e.target.value)}>
             <option value="">Any</option>
             <option value="main course">Main Course</option>
@@ -81,14 +81,14 @@ function SearchForm() {
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="keywords">
-          <Form.Label>KeyWord</Form.Label>
+          <Form.Label>Or Search by a Keyword</Form.Label>
           <Form.Control value={keyword} onChange={(e) => setKeyword(e.target.value)} />
         </Form.Group>
       </Row>
       <Button variant="primary" type="submit" className="submit-btn">
         Get Recipes!
       </Button>
-      <Button className="clear-btn" onClick={() => clearSearch(dispatch)}>Clear Results</Button>
+      <Button id="clear-btn" variant="secondary" onClick={() => clearSearch(dispatch)}>Clear Results</Button>
     </Form>
   );
 }
