@@ -1,4 +1,4 @@
-export const addToShopping = (dispatch, thisRecipe) => {
+export const addToMyRecipe = (dispatch, thisRecipe) => {
   dispatch({ type: "ADD_RECIPE", payload:thisRecipe});
 };
 

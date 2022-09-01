@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import { deleteRecipe } from '../actions/ShoppingActions'
+import { deleteRecipe } from '../actions/myRecipeActions'
+import "../css/myList.css"
 
 const MyRecipes = (props) => {
     const dispatch = useDispatch()
@@ -10,8 +11,8 @@ const MyRecipes = (props) => {
         //add deletefrom ingredients
     }
     return (
-        <div>
-            <Card style={{height:"25rem"}} className="m-2" id="m-2">
+        <div className='myRecipeCardContainer'>
+            <Card style={{ width: "100%", height: "100%" }}>
             <Card.Img variant="top" src={props.recipe.image} />
             <Card.Body className="d-flex flex-column justify-content-between">
             <Card.Title>{props.recipe.title}</Card.Title>

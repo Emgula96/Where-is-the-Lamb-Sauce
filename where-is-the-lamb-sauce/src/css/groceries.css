@@ -1,0 +1,44 @@
+/* .groceriesList{
+    display: flex;
+    max-width: 100vw;
+    flex-wrap: wrap;
+
+} */
+.indvGrocery{
+    position: relative;
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.removeGroc{
+    margin: 10px;
+    left: 0;
+}
+p{
+    margin: 0;
+}
+.groceriesList{
+    background: rgba(255, 255, 255, 0.7);;
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+}
+#groceryTitle{
+    text-align: center;
+}
+@media(max-width: 700px){
+    .groceriesList{
+    background: rgba(255, 255, 255, 0.7);;
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr
+}
+}

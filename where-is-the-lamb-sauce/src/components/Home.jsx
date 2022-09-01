@@ -7,7 +7,7 @@ import '../css/home.css'
 
 const Home = () => {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" id="navbar">
           <Link id="nav-item" to='/'><Navbar.Brand id ='nav-item'><img id='navPicture' src={ require('../img/white-lamb.png')}alt='' /></Navbar.Brand></Link>
       <Nav className="mr-auto pl-2" id="navbar">
         <Link id ='nav-item' className="nav-link" to="/"> Home </Link>

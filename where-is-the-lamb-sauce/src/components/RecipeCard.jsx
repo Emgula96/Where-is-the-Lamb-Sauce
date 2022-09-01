@@ -3,15 +3,15 @@ import { Button, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setRecipe } from "../actions/setRecipe";
 import { useNavigate } from "react-router-dom";
-import { addToShopping } from "../actions/ShoppingActions";
+import { addToMyRecipe} from "../actions/myRecipeActions";
 import { addIngredientstoList } from "../actions/IngredientActions";
+import uuid from "react-uuid";
 const APIkey = process.env.REACT_APP_API_KEY;
 
 const RecipeCard = ({ recipe }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const ingredientList = useSelector((state) => state.ingredientsR.ingredientsList);
-
   const pullRecipe = async (e) => {
     const URL = `https://api.spoonacular.com/recipes/${recipe?.id}/information?apiKey=${APIkey}`;
     try {
@@ -31,7 +31,7 @@ const RecipeCard = ({ recipe }) => {
       const response = await fetch(URL);
       const results = await response.json();
       // console.log(results)
-      addToShopping(dispatch, results)
+      addToMyRecipe(dispatch, results)
           for (let i of results.extendedIngredients) {
             ingredientList.push({
               aisle: i.aisle,
@@ -39,6 +39,7 @@ const RecipeCard = ({ recipe }) => {
               unit: i.unit,
               name: i.name,
               id: recipe.id,
+              uuid: uuid()
             });
             addIngredientstoList(dispatch, ingredientList);
           }
@@ -52,7 +53,7 @@ const RecipeCard = ({ recipe }) => {
 
 
   return (
-    <div className="card">
+    <div className="card" id='card'>
       <Card style={{ width: "100%", height: "100%" }}>
         <Card.Img variant="top" src={recipe?.image} alt="Picture not found" />
         <Card.Body>

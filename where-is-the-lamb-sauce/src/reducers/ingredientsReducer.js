@@ -12,8 +12,8 @@ const ingredientsReducer = (state = initialState, action) => {
     case "DELETE_FROM_INGREDIENTS_LIST":
       return {
         ...state,
-        ingredientsList: state.ingredientsList.filter((n) => {
-          return n.id !== action.recipe.id;
+        ingredientsList: state.ingredientsList.filter((groc) => {
+          return groc.uuid !== action.payload.uuid;
         }),
       };
     case "CLEAR_GROCERIES":

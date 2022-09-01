@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addIngredientstoList } from "../actions/IngredientActions";
 import removeTags from "../actions/removeHTML";
 import { Button } from "react-bootstrap";
-import { addToShopping } from "../actions/ShoppingActions";
+import { addToMyRecipe } from "../actions/myRecipeActions";
+import uuid from "react-uuid";
+import "../css/SingleRecipe.css"
 
 const IndividualRecipe = () => {
   const thisRecipe = useSelector((state) => state.recipeR.individualRecipe);
@@ -19,6 +21,7 @@ const IndividualRecipe = () => {
         unit: i.unit,
         name: i.name,
         id: thisRecipe.id,
+        uuid: uuid(),
       });
       addIngredientstoList(dispatch, ingredientList);
     }
@@ -26,39 +29,43 @@ const IndividualRecipe = () => {
 
   const handleClick = () => {
     setingredientList(thisRecipe);
-      addToShopping(dispatch, thisRecipe);
+      addToMyRecipe(dispatch, thisRecipe);
   }
 
 
   return (
-    <div>
-      <h1>{thisRecipe.title} </h1>
-      <h2>Cook time: {thisRecipe.readyInMinutes} minutes</h2>
-      <img src={thisRecipe.image} alt="" />
-      <p>{removeTags(thisRecipe.summary)}</p>
-      <ul>
-        {thisRecipe.extendedIngredients?.map((ing, index) => {
-          return (
-            <li key={index}>
-              {ing.amount} {ing.unit} {ing.name}
-            </li>
-          );
-        })}
-      </ul>
-      <h3>INSTRUCTIONS</h3>
-      <ol>
-        {Array.isArray(instructions)
-          ? instructions?.map((step, index) => {
-              return <li key={index}>{step.step}</li>;
-            })
-          : "No instructions found. Good luck!"}
-      </ol>
-      <Button
-        onClick={() => {
-          handleClick()
-        }}>
-        Add to My Recipes
-      </Button>
+    <div id="indv-Recipe-Container">
+      <div className="container-top">
+          <h1>{thisRecipe.title} </h1>
+          <h2>Cook time: {thisRecipe.readyInMinutes} minutes</h2>
+          <img id="indv-picture" src={thisRecipe.image} alt="" />
+          <p className="summary">{removeTags(thisRecipe.summary)}</p>
+        <Button className="add-recipe-btn"
+          onClick={() => {
+            handleClick();
+          }}>
+          Add to My Recipes
+        </Button>
+      </div>
+      <div className="container-bottom">
+        <ul>
+          {thisRecipe.extendedIngredients?.map((ing, index) => {
+            return (
+              <li key={index}>
+                {ing.amount} {ing.unit} {ing.name}
+              </li>
+            );
+          })}
+        </ul>
+        <h3>INSTRUCTIONS</h3>
+        <ol>
+          {Array.isArray(instructions)
+            ? instructions?.map((step, index) => {
+                return <li key={index}>{step.step}</li>;
+              })
+            : "No instructions found. Good luck!"}
+        </ol>
+      </div>
     </div>
   );
 };

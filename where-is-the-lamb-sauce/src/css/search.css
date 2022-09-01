@@ -18,7 +18,7 @@
     padding:20px;
     display: grid;
     grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
-    gap:10px;
+    gap:15px;
     justify-content: space-around;
 }
 #btn{
@@ -28,6 +28,10 @@
 #clear-btn{
     margin:10px
 }
-.card{
-    background-color: whitesmoke!important;
+.search-title{
+    padding:10px;
+    text-align: center;
+}
+form{
+    margin: 10px;
 }

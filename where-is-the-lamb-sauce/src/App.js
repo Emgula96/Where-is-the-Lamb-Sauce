@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <div className="homeImage">
-        <div className="">
-          <h1 style={{ fontSize: "50px" }}>Where IS the LAMB SAUCE!?</h1>
+        <div className="home-container">
+          <h1 style={{ fontSize: "50px" }}>WHERE IS THE LAMB SAUCE!?</h1>
           <h5>Your one stop for meal prep.</h5>
           <Link to="/search">
             <Button>Get Started</Button>

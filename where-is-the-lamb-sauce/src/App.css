@@ -40,12 +40,15 @@
 
 .homeImage {
   background-image: url("../src/img/doughmound.jpg");
-  background-color: #cccccc;
-  min-height: 93vh;
+  min-height: 88vh;
   width: 100vw;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+.home-container{
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
