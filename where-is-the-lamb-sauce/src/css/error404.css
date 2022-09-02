@@ -1,0 +1,14 @@
+.main-container{
+    padding: 15px;
+    background:rgba(255, 255, 255, 0.65);
+}
+.background{
+  background-image: url("../img/doughmound.jpg");
+  min-height: 88vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
