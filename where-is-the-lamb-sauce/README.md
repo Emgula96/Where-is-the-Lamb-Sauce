@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# WHERE IS THE LAMB SAUCE!?
+This app was built using React/REDUX assist users with easy meal prep! Search through the library of thousands of recipes to find one that suites your needs. The user can search via cuisine(American,Korean, Mexican), course, or by a keyword. Users can also save recipes they like and add the required ingredients to a grocery list. Recipes and groceries can be deleted as needed.
+  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage:
 
-## Available Scripts
+This website is controlled by a single router. Using async fetches the API is called on by the user and the response is rendered to the page. All information on the website is stored in both local and global state and is called on using custom and built in hooks. UI was build from react-bootstrap and splide.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## To run:
+<li>Copy this repo.</li>
+<li>cd into the self-titled folder.</li>
+<li>npm i</li>
+<li>Double check all the packages below are in your package.json</li>
+<li>npm start</li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Languages:
+<ul>
+    <li>REACT/REDUX(Library)</li>
+    <li>JavaScript</li>
+    <li>JSXML</li>
+    <li>CSS</li>
+</ul>
 
-### `npm test`
+### Packages (for Node.js)
+<ul>
+    <li>react</li>
+    <li>redux</li>
+    <li>react-redux</li>
+    <li>react-router</li>
+    <li>redux-logger</li>
+    <li>redux-persist</li>
+    <li>react-router-dom</li>
+    <li>react-dom</li>
+    <li>bootstrap</li>
+    <li>react-bootstrap</li>
+    <li>react-uuid</li>
+    <li>Splide</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### APIs 
+<ul>
+    <li>Spoonacular API - https://spoonacular.com/food-api</li>
+</ul>
 
-### `npm run build`
+## Goals
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Base Goals
+<ul>
+    <li>Gain familiarity with Redux</li>
+    <li>Grow in familiarity with React</li>
+    <li>Use bootstrap and react-bootstrap for layout and UI</li>
+    <li>Users can search recipes, refining searches by keyword, cusine, and type of dish</li>
+    <li>Users can move recipes to a saved list</li>
+    <li>Users are given an organized grocery list</li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stretch Goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ul>
+    <li>Have a more organized Grocery cart and combine similar items (1 cup of flour + 2 cups of flour).</li>
+    <li>Manage a way to have less api calls, try having more initial calls and keeping API in state.</li>
+    <li>Have a user account where they can save favorited recipes.</li>
+</ul>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Challenges and Solutions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Project Planning:
+Understanding the layout of this project was important. Encouraged by my instructor and TA I drew out the layout of my website on a piece of paper so I could better understand the flow. This made passing props easier anytime I needed to do so. It took a little longer to get started but I'm glad I took the extra time.
+ 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Local vs Global state:
+During this project it was required to use both local and global state hooks. One example of this is when taking in the inputs from the user on the search page. I was able to use local state to set the value of the input fields but set the response of the API to global. This was to allow the user multiple searches without storing unessacary data.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### API issues:
+I was amazed at how expansive spoonacularAPI's is. It was not hard to find all of the data I would need for this project. However some of the ways they store data is inconssistent. This can be seen anytime a recipe has multiple components thus requiring multiple sets of instructions. This made it difficult to write functions to render out the instructions for each recipe.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Code Snippets
