@@ -14,6 +14,8 @@ This website is controlled by a single router. Using async fetches the API is ca
 <li>npm i</li>
 <li>Double check all the packages below are in your package.json</li>
 <li>npm start</li>
+<li>Sign up for spoonacularAPI<li>
+<li>Copy api key to .env file name it REACT_API_KEY<li>
 
 ### Languages:
 <ul>
