@@ -79,3 +79,87 @@ I was amazed at how expansive spoonacularAPI's is. It was not hard to find all o
 
 
 ## Code Snippets
+```
+
+  const addAllToShopping = async (e) => {
+    const URL = `https://api.spoonacular.com/recipes/${recipe?.id}/information?apiKey=${APIkey}`;
+    try {
+      const response = await fetch(URL);
+      const results = await response.json();
+      // console.log(results)
+      addToMyRecipe(dispatch, results)
+          for (let i of results.extendedIngredients) {
+            ingredientList.push({
+              aisle: i.aisle,
+              amount: i.amount,
+              unit: i.unit,
+              name: i.name,
+              id: recipe.id,
+              uuid: uuid()
+            });
+            addIngredientstoList(dispatch, ingredientList);
+          }
+    } catch (error) {
+      console.log(error);
+      navigate("*")
+    }
+  };
+
+
+  return (
+    <div id="indv-Recipe-Container">
+      <div className="container-top">
+          <h1>{thisRecipe.title} </h1>
+          <h2>Cook time: {thisRecipe.readyInMinutes} minutes</h2>
+          <img id="indv-picture" src={thisRecipe.image} alt="" />
+          <p className="summary">{removeTags(thisRecipe.summary)}</p>
+        <Button className="add-recipe-btn"
+          onClick={() => {
+            handleClick();
+          }}>
+          Add to My Recipes
+        </Button>
+      </div>
+      <div className="container-bottom">
+        <ul>
+          {thisRecipe.extendedIngredients?.map((ing, index) => {
+            return (
+              <li key={index}>
+                {ing.amount} {ing.unit} {ing.name}
+              </li>
+            );
+          })}
+        </ul>
+        <h3>INSTRUCTIONS</h3>
+        <ol>
+          {Array.isArray(instructions)
+            ? instructions?.map((step, index) => {
+                return <li key={index}>{step.step}</li>;
+              })
+            : "No instructions found. Good luck!"}
+        </ol>
+      </div>
+    </div>
+  );
+};
+
+
+
+const shoppingReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "ADD_RECIPE":
+        return {
+          ...state,
+          shoppingList: state.shoppingList.concat(action.payload),
+        };
+      case "DELETE_RECIPE":
+        return {
+          ...state,
+          shoppingList: state.shoppingList.filter((i) => {
+            return i.id !== action.payload.id;
+          }),
+        };
+      default:
+        return state;
+    }
+```
